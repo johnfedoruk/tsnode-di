@@ -3,9 +3,16 @@
         "tslint:recommended"
 	],
 	"rules": {
+        "no-namespace": false,
 		"no-boolean-literal-compare": false,
-		"strict-boolean-expressions": false,
+        "strict-boolean-expressions": false,
+        "interface-name": false,
         "indent": [true, "tab", 4],
 		"variable-name": ["allow-pascal-case"]
-	}
+    },
+    "linterOptions": {
+        "exclude": [
+            "src/**/*.spec.ts"
+        ]
+    }
 }
