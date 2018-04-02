@@ -1,5 +1,8 @@
 # TSNODE-DI
 
+[![Build Status](https://travis-ci.org/johnfedoruk/tsnode-di.svg?branch=master)](https://travis-ci.org/johnfedoruk/tsnode-di)
+
+
 Simple and lightweight dependency injection for Node TypeScript.
 
 ## Getting Started
