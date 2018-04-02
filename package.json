@@ -2,7 +2,8 @@
   "name": "tsnode-di",
   "version": "0.0.0",
   "description": "Simple and lightweight dependency injection for Node TypeScript.",
-  "main": "lib/index.js",
+  "main": "lib/index",
+  "typings": "lib/index",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha **/*spec.ts --recursive --require node_modules/ts-node/register.js",
     "test:watch": "npm run test -- --watch-extensions ts,spec.ts --watch",
