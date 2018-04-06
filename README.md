@@ -31,6 +31,7 @@ class ProviderClass {
 }
 @Injectable()
 class ConsumerClass1 {
+    // using constructor DI to resolve Provider class
     constructor(public provider: ProviderClass) { }
     public get provider():ProviderClass {
         return this.provider;
@@ -38,7 +39,10 @@ class ConsumerClass1 {
 }
 @Injectable()
 class ConsumerClass2 {
-    constructor(public provider: ProviderClass) { }
+    // using @Resolve decorator to resolve ProviderClass
+    @Resolve(ProviderClass)
+    public provider: ProviderClass;
+    constructor() { }
     public get provider():ProviderClass {
         return this.provider;
     }
