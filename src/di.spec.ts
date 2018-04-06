@@ -1,6 +1,7 @@
 import * as chai from "chai";
 import { Injectable } from "./injectable";
 import { Injector } from "./injector";
+import { Resolve } from './resolve';
 
 const expect = chai.expect;
 
@@ -20,7 +21,9 @@ class B {
 }
 @Injectable()
 class C {
-	constructor(public a: A, public b: B) { }
+    @Resolve(B)
+    public b: B;
+	constructor(public a: A) { }
 }
 
 describe("DI", () => {
@@ -74,9 +77,9 @@ describe("DI", () => {
 			expect(c.a.id).to.be.greaterThan(0);
 			expect(c.a.id).to.be.lessThan(100001);
 		});
-		it("should resolve an instance of class B through DI", () => {
+		it("should resolve an instance of class B with @Resolve", () => {
 			const c = Injector.resolve<C>(C);
-			expect(c.b).not.to.be.undefined;
+			expect(c.b).to.be.instanceof(B);
 		});
 		it("should have access to instance A's id through class B", () => {
 			const c = Injector.resolve<C>(C);
