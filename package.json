@@ -1,6 +1,6 @@
 {
   "name": "tsnode-di",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple and lightweight dependency injection for Node TypeScript.",
   "main": "lib/index",
   "typings": "lib/index",
