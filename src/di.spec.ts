@@ -22,7 +22,7 @@ class B {
 @Injectable()
 class C {
     @Resolve(B)
-    public b: B;
+    public b!: B;
 	constructor(public a: A) { }
 }
 
